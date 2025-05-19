@@ -487,9 +487,11 @@ void gTree::getPartitions(vector<pair<string,double> >&  part_info) {
 		node2 = edges[i].second;
 		allLeaves.clear();
 		node1->collectAllLeaves(node2, allLeaves);
+		sort(allLeaves.begin(),allLeaves.end());
 		s1 = vector2str(allLeaves);
 		allLeaves.clear();
 		node2->collectAllLeaves(node1, allLeaves);
+		sort(allLeaves.begin(),allLeaves.end());
 		s2 = vector2str(allLeaves);
 		if (s1 < s2)
 			part = s1 + "::" + s2;
